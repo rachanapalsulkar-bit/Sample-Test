@@ -21,14 +21,23 @@ else:
 product = []
 print("\nEnter the product name (type 'q' to stop):")
 while True:
-    product_input = input()
+    product_input = input()  
+    
+# Ignore empty string if cart already has items  
+    if product_input == "":
+        print("Product name cannot be empty. Try again.")
+        continue
+
+# Exit condition
     if product_input == 'q':
         break
-    if product_input == '0' and not product:
-        print("Cart is empty")
-        break
-    print(product)
-    
+
+# Add valid product name
+    product.append(product_input)
+
+# Print the final list of products from the cart
 print("All products are successfully added to the cart.")
 print("Products list is:")
 print(product)
+
+##=======================##
